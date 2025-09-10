@@ -3,7 +3,7 @@
 This repository showcases a **complete product + data analysis case study** on **user retention** and **recharge funnel optimization** for **FamPay**, India’s teen-focused payments app.  
 It combines **SQL queries, retention metrics, funnel diagnostics, and product strategy recommendations** into a single structured project.  
 
----
+
 
 ## 🚀 Project Overview
 
@@ -16,17 +16,20 @@ This project deep-dives into:
 2. **Recharge Funnel Diagnostics** (Identifying drop-offs, operator failures, UPI reliability).  
 3. **Actionable Product Insights** (Data-backed nudges, loyalty programs, transparency measures).  
 
----
+
 
 ## 📂 Project Structure
 
 ├── SQL_QUERIES_TASK1.docx # SQL queries for retention metrics
+---
 ├── TASK1_PRESENTATION.pptx # Retention analysis presentation (Insights + Nudges)
+---
 ├── TASK2_PRESENTATION.pptx # Recharge funnel analysis (Root causes + Fixes)
+---
 └── README.md # Project documentation
 
 
----
+
 
 ## 🧑‍💻 Key Analyses
 
@@ -41,7 +44,6 @@ This project deep-dives into:
 
 ➡️ **Insight:** Retained FamPay users transact **2–3x more frequently**, adopt **multiple transaction types**, and show **higher average spend**.  
 
----
 
 ### **Recharge Funnel Diagnostics**
 - **Stage drops:** Browse → Plan → Payment → Success → Confirmation  
@@ -53,7 +55,7 @@ This project deep-dives into:
 
 ➡️ **Insight:** FamPay’s funnel leakages were driven primarily by **infrastructure failures** (operator & UPI), amplified by **lack of user transparency**.  
 
----
+
 
 ## 💡 Recommendations
 
@@ -68,7 +70,7 @@ This project deep-dives into:
   - Medium term: Operator reliability SLAs, retry logic for UPI failures.  
   - Long term: Operator diversification, real-time monitoring, **user trust signals** (live success rates, “Recharge or Refund in 30 mins”).  
 
----
+
 
 ## 🛠️ Tech Stack
 
