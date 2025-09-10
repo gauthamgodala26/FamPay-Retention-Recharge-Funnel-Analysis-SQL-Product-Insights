@@ -73,7 +73,7 @@ This project deep-dives into:
 
 
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **SQL (PostgreSQL style)** – for retention & funnel queries  
 - **Excel / Power BI** – for visualization & dashboards  
@@ -89,8 +89,8 @@ This project deep-dives into:
 
 ---
 
-## 👤 Author  
+##  Author  
 **Sai Gautham Godala**  
-📌 Aspiring Product Analyst | SQL + Data Analytics | Product Strategy  
+ Aspiring Product Analyst | SQL + Data Analytics | Product Strategy  
 
 ---
