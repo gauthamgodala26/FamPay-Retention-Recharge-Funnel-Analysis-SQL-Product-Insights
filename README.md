@@ -91,6 +91,6 @@ This project deep-dives into:
 
 ##  Author  
 **Sai Gautham Godala**  
- Aspiring Product Analyst | SQL + Data Analytics | Product Strategy  
+ 
 
 ---
