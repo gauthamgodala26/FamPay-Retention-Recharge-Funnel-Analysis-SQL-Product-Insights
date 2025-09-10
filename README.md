@@ -1,11 +1,11 @@
-# 📊 FamPay Retention & Funnel Analysis
+#  FamPay Retention & Funnel Analysis
 
 This repository showcases a **complete product + data analysis case study** on **user retention** and **recharge funnel optimization** for **FamPay**, India’s teen-focused payments app.  
 It combines **SQL queries, retention metrics, funnel diagnostics, and product strategy recommendations** into a single structured project.  
 
 
 
-## 🚀 Project Overview
+##  Project Overview
 
 Retention and reliability are the lifeblood of fintech apps like **FamPay**.  
 - **Retention** drives long-term growth — acquiring new users costs 5–7x more than keeping existing ones.  
@@ -18,7 +18,7 @@ This project deep-dives into:
 
 
 
-## 📂 Project Structure
+##  Project Structure
 
 ├── SQL_QUERIES_TASK1.docx # SQL queries for retention metrics
 ---
@@ -27,11 +27,12 @@ This project deep-dives into:
 ├── TASK2_PRESENTATION.pptx # Recharge funnel analysis (Root causes + Fixes)
 ---
 └── README.md # Project documentation
+---
 
 
 
 
-## 🧑‍💻 Key Analyses
+##  Key Analyses
 
 ### **Retention Metrics (SQL-based)**
 - Avg. transactions per month (Retained vs Non-Retained)  
@@ -42,7 +43,7 @@ This project deep-dives into:
 - Average active months  
 - % of multi-type users (diversity of transactions)  
 
-➡️ **Insight:** Retained FamPay users transact **2–3x more frequently**, adopt **multiple transaction types**, and show **higher average spend**.  
+➡ **Insight:** Retained FamPay users transact **2–3x more frequently**, adopt **multiple transaction types**, and show **higher average spend**.  
 
 
 ### **Recharge Funnel Diagnostics**
@@ -53,11 +54,11 @@ This project deep-dives into:
   - Operator Y delays (1–2 hrs confirmation).  
   - Growing **trust erosion**: complaints doubled, social mentions spiked.  
 
-➡️ **Insight:** FamPay’s funnel leakages were driven primarily by **infrastructure failures** (operator & UPI), amplified by **lack of user transparency**.  
+➡ **Insight:** FamPay’s funnel leakages were driven primarily by **infrastructure failures** (operator & UPI), amplified by **lack of user transparency**.  
 
 
 
-## 💡 Recommendations
+##  Recommendations
 
 - **Retention Playbook for FamPay:**  
   - Onboarding rewards for **first transaction**.  
@@ -72,7 +73,7 @@ This project deep-dives into:
 
 
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 - **SQL (PostgreSQL style)** – for retention & funnel queries  
 - **Excel / Power BI** – for visualization & dashboards  
@@ -80,7 +81,7 @@ This project deep-dives into:
 
 ---
 
-## 📈 Outcomes
+##  Outcomes
 
 - Built **7 retention metrics** entirely in SQL.  
 - Identified **3 major recharge funnel bottlenecks** with quantified impact.  
