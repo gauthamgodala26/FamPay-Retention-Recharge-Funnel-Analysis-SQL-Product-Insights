@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/FamPay_logo.png/320px-FamPay_logo.png" alt="FamPay Logo" width="200"/>
+  <img src="assets/fampay_logo.png" alt="FamPay Logo" width="200"/>
 </p>
-
 
 #  FamPay Retention & Funnel Analysis
 
