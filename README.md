@@ -76,7 +76,7 @@ This project deep-dives into:
 ##  Tech Stack
 
 - **SQL (PostgreSQL style)** – for retention & funnel queries  
-- **Excel / Power BI** – for visualization & dashboards  
+- **Excel** – for visualization 
 - **Business/Product Frameworks** – root cause analysis, prioritization, user nudges  
 
 ---
