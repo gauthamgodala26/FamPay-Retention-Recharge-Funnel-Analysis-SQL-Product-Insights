@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/FamPay_logo.png/320px-FamPay_logo.png" alt="FamPay Logo" width="200"/>
+</p>
+
+
 #  FamPay Retention & Funnel Analysis
 
 This repository showcases a **complete product + data analysis case study** on **user retention** and **recharge funnel optimization** for **FamPay**, India’s teen-focused payments app.  
