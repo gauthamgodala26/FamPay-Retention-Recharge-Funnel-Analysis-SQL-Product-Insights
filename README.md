@@ -47,7 +47,7 @@ README.md # Project documentation
 - Average active months  
 - % of multi-type users (diversity of transactions)  
 
-➡ **Insight:** Retained FamPay users transact **2–3x more frequently**, adopt **multiple transaction types**, and show **higher average spend**.  
+ **Insight:** Retained FamPay users transact **2–3x more frequently**, adopt **multiple transaction types**, and show **higher average spend**.  
 
 
 ### **Recharge Funnel Diagnostics**
@@ -58,7 +58,7 @@ README.md # Project documentation
   - Operator Y delays (1–2 hrs confirmation).  
   - Growing **trust erosion**: complaints doubled, social mentions spiked.  
 
-➡ **Insight:** FamPay’s funnel leakages were driven primarily by **infrastructure failures** (operator & UPI), amplified by **lack of user transparency**.  
+ **Insight:** FamPay’s funnel leakages were driven primarily by **infrastructure failures** (operator & UPI), amplified by **lack of user transparency**.  
 
 
 
