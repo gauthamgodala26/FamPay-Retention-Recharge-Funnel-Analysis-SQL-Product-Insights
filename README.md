@@ -24,13 +24,13 @@ This project deep-dives into:
 
 ##  Project Structure
 
-├── SQL_QUERIES_TASK1.docx # SQL queries for retention metrics
+SQL_QUERIES_TASK1.docx # SQL queries for retention metrics
 ---
-├── TASK1_PRESENTATION.pptx # Retention analysis presentation (Insights + Nudges)
+TASK1_PRESENTATION.pptx # Retention analysis presentation (Insights + Nudges)
 ---
-├── TASK2_PRESENTATION.pptx # Recharge funnel analysis (Root causes + Fixes)
+TASK2_PRESENTATION.pptx # Recharge funnel analysis (Root causes + Fixes)
 ---
-└── README.md # Project documentation
+README.md # Project documentation
 ---
 
 
