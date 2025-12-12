@@ -1,0 +1,17 @@
+-- METRIC 1: Avg. transactions per month (Retained vs Not Retained)
+
+WITH cte AS (
+    SELECT
+        user_id,
+        CASE WHEN COUNT(DISTINCT date_trunc('month', date_of_transaction)) >= 3
+             THEN 'Retained' ELSE 'Not Retained' END AS retention_status,
+        COUNT(*) AS txn_count
+    FROM transaction_details
+    WHERE status = 'Completed'
+    GROUP BY user_id
+)
+SELECT
+    retention_status,
+    ROUND(AVG(txn_count), 2) AS avg_transactions
+FROM cte
+GROUP BY retention_status;
