@@ -90,7 +90,9 @@ SELECT
 FROM cte
 GROUP BY retention_status;
 
-### METRIC 2: Average Time between activation and first transaction
+```
+
+## METRIC 2: Average Time between activation and first transaction
 
 WITH cte AS (
     SELECT
@@ -109,4 +111,6 @@ SELECT
     AVG(days_to_first_txn) AS avg_days2_first_txn
 FROM cte
 GROUP BY retention_status;
+
+
 
