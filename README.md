@@ -3,35 +3,39 @@
 
 # FamApp Retention & Funnel Analysis
 
-This repository presents a complete product and data analysis case study on user retention and recharge-funnel performance for FamApp, a teen-focused financial application.  
-It brings together SQL-based retention metrics, behavioural insights, funnel diagnostics, and product strategy recommendations in a single structured project.
+This repository presents a comprehensive product and data analysis case study focused on user retention and recharge-funnel performance for **FamApp**, a payments platform built for teens and young adults.  
+The project consolidates SQL-driven behavioural metrics, retention insights, funnel diagnostics, and product strategy recommendations into a single, structured, and business-ready deliverable.
 
 ---
 
 ## Project Overview
 
-Retention and transaction reliability are foundational to growth in consumer fintech.  
-- Retained users contribute to higher lifetime value and word-of-mouth acquisition.  
-- Recharge funnel performance directly impacts revenue and user trust.
+Retention and transactional reliability form the backbone of long-term growth in consumer fintech.  
 
-This project covers two major analytical tracks:
+- Strong retention directly contributes to higher lifetime value, lower acquisition costs, and sustained engagement.  
+- A healthy recharge funnel is essential for revenue generation and trust — any instability immediately impacts user confidence.
 
-1. User Retention Analysis (habit formation, transaction patterns, behavioural segmentation)  
-2. Recharge Funnel Diagnostics (conversion issues, operator failures, UPI success decline)
+This project investigates two critical analytical areas:
 
-Both analyses are driven using SQL and data interpretation, supported by structured presentations and detailed reasoning.
+1. **User Retention Analysis**  
+   Examines activation behaviour, transaction patterns, frequency, diversity, and early habit formation.  
+
+2. **Recharge Funnel Diagnostics**  
+   Evaluates stage-wise drop-offs, operator performance issues, UPI reliability, and the resulting impact on GMV and revenue.  
+
+Both analyses are powered by SQL queries, data interpretation, structured documentation, and product-focused frameworks.
 
 ---
 
 ## Project Structure
 
-SQL_QUERIES_TASK1.docx      # SQL queries for retention metrics  
+SQL_QUERIES_TASK1.docx      — SQL queries for all retention metrics  
 ---  
-TASK1_PRESENTATION.pptx     # Retention analysis (Insights + Nudges)  
+TASK1_PRESENTATION.pptx     — Retention analysis (behavioural insights, habit formation, nudges)  
 ---  
-TASK2_PRESENTATION.pptx     # Recharge funnel RCA (Root causes + Fixes)  
+TASK2_PRESENTATION.pptx     — Recharge funnel RCA (root causes, impact, prioritised solutions)  
 ---  
-README.md                   # Project documentation  
+README.md                   — Project documentation  
 ---
 
 ---
@@ -40,31 +44,39 @@ README.md                   # Project documentation
 
 ### Retention Metrics (SQL-Based)
 
-The retention study evaluates seven core behavioural dimensions:
+The retention study explores seven core behavioural dimensions that differentiate **retained** users from **non-retained** users:
 
 - Average transactions per month  
 - Time from activation to first transaction  
-- Transaction type distribution (Merchant / P2P / Card)  
-- Average, minimum, and maximum transaction value  
-- Age group distribution  
-- Active months distribution  
-- Transaction-type diversity (single vs multi-type users)
+- Transaction type distribution (P2P, Merchant, Card)  
+- Transaction value characteristics (average, minimum, maximum)  
+- Age group segmentation  
+- Active months across the three-month window  
+- Diversity of transaction types (single-type vs multi-type users)
 
-Insight: Retained FamApp users engage more consistently, transact across more categories, and establish behaviour patterns earlier in their lifecycle.
+**Key Insight:**  
+Retained users adopt meaningful behaviours early — they transact more frequently, use a broader set of transaction types, and show stronger, more consistent engagement patterns throughout the time period.
 
 ---
 
 ### Recharge Funnel Diagnostics
 
-Recharge funnel performance was analysed across: Browse → Plan Selected → Payment Initiated → Payment Successful → Recharge Confirmed.
+Recharge funnel performance was assessed across the full flow:  
+**Browse → Plan Selected → Payment Initiated → Payment Successful → Recharge Confirmed**
 
-Key Issues Identified:
-- Significant timeout increase from Operator X (55% share of volume)  
-- Delayed confirmations from Operator Y  
-- Drop in UPI success rate  
-- Surge in user complaints and delay reports  
+The analysis revealed the following issues:
 
-Insight: The revenue decline stemmed from operator-side failures and UPI reliability issues, which led to customer frustration and reduced repeat attempts.
+- A sharp increase in timeout errors from **Operator X**, which handles more than half of all recharge volume  
+- Significant delays in confirmation from **Operator Y**  
+- A measurable decline in UPI payment success rates  
+- A rise in user complaints and frustration related to delayed or failed recharges  
+
+**Key Insight:**  
+The revenue and success-rate decline was driven primarily by operator-side instability and payment-rail reliability issues. These disruptions materially affected user trust and contributed to repeated funnel abandonment.
+
+---
+
+
 
 ---
 
