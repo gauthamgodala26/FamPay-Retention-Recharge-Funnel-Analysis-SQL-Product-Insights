@@ -106,6 +106,110 @@ WITH cte AS (
     WHERE t.status = 'Completed'
     GROUP BY u.user_id
 )
+-- METRIC 1: Avg. transactions per month (Retained vs Not Retained)
+
+WITH cte AS (
+    SELECT
+        user_id,
+        CASE WHEN COUNT(DISTINCT date_trunc('month', date_of_transaction)) >= 3
+             THEN 'Retained' ELSE 'Not Retained' END AS retention_status,
+        COUNT(*) AS txn_count
+    FROM transaction_details
+    WHERE status = 'Completed'
+    GROUP BY user_id
+)
+SELECT
+    retention_status,
+    ROUND(AVG(txn_count), 2) AS avg_transactions
+FROM cte
+GROUP BY retention_status;
+
+
+
+-- METRIC 2: Average Time between activation and first transaction
+
+WITH cte AS (
+    SELECT
+        u.user_id,
+        CASE WHEN COUNT(DISTINCT date_trunc('month', t.date_of_transaction)) >= 3
+             THEN 'Retained' ELSE 'Not Retained' END AS retention_status,
+        MIN(t.date_of_transaction) - u.activation_date AS days_to_first_txn
+    FROM transaction_details t
+    INNER JOIN user_details u ON t.user_id = u.user_id
+    WHERE t.status = 'Completed'
+    GROUP BY u.user_id
+)
+SELECT
+    retention_status,
+    AVG(days_to_first_txn) AS avg_days2_first_txn
+FROM cte
+GROUP BY retention_status;
+
+
+
+-- METRIC 3: Transaction type distribution (Merchant vs P2P vs Card)
+
+WITH cte AS (
+    SELECT
+        user_id,
+        CASE WHEN COUNT(DISTINCT date_trunc('month', date_of_transaction)) >= 3
+             THEN 'Retained' ELSE 'Not Retained' END AS retention_status
+    FROM transaction_details
+    WHERE status = 'Completed'
+    GROUP BY user_id
+)
+SELECT
+    cte.retention_status,
+    t.type_of_transaction,
+    COUNT(*) AS txn_count,
+    CONCAT(
+        ROUND(
+            100.0 * COUNT(*) /
+            SUM(COUNT(*)) OVER (PARTITION BY cte.retention_status),
+        2),
+        '%'
+    ) AS percentage_share
+FROM transaction_details t
+INNER JOIN cte ON t.user_id = cte.user_id
+WHERE t.status = 'Completed'
+GROUP BY cte.retention_status, t.type_of_transaction
+ORDER BY txn_count DESC;
+
+
+
+-- METRIC 4: Avg, Min, Max transaction value
+
+WITH cte AS (
+    SELECT
+        user_id,
+        CASE WHEN COUNT(DISTINCT date_trunc('month', date_of_transaction)) >= 3
+             THEN 'Retained' ELSE 'Not Retained' END AS retention_status
+    FROM transaction_details
+    WHERE status = 'Completed'
+    GROUP BY user_id
+)
+SELECT
+    cte.retention_status,
+    AVG(t.amount) AS avg_txn_value,
+    MAX(t.amount) AS max_txn_value,
+    MIN(t.amount) AS min_txn_value
+FROM transaction_details t
+INNER JOIN cte ON t.user_id = cte.user_id
+WHERE t.status = 'Completed'
+GROUP BY cte.retention_status;
+
+
+
+-- METRIC 5: Age group distribution (Teens, Young Adults, Adults)
+
+WITH cte AS (
+    SELECT
+        user_id,
+        CASE WHEN COUNT(DISTINCT date_trunc('month', date_of_transaction)) >= 3
+             THEN 'Retained' ELSE 'Not Retained' END AS retention_status
+    FROM transaction_details
+    WHERE status = 'Completed'
+    GROUP
 
 SELECT
     retention_status,
