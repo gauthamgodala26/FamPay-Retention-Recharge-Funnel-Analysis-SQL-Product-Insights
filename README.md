@@ -1,100 +1,91 @@
-![FamPay Logo](https://bookface-images.s3.amazonaws.com/logos/ecf2156d9e82bcc5d049ec91e692bf481952c39e.png)
+![FamApp Logo](https://bookface-images.s3.amazonaws.com/logos/ecf2156d9e82bcc5d049ec91e692bf481952c39e.png)
 <p align="center">
- 
 
-#  FamPay Retention & Funnel Analysis
+# FamApp Retention & Funnel Analysis
 
-This repository showcases a **complete product + data analysis case study** on **user retention** and **recharge funnel optimization** for **FamPay**, India’s teen-focused payments app.  
-It combines **SQL queries, retention metrics, funnel diagnostics, and product strategy recommendations** into a single structured project.  
+This repository presents a complete product and data analysis case study on user retention and recharge-funnel performance for FamApp, a teen-focused financial application.  
+It brings together SQL-based retention metrics, behavioural insights, funnel diagnostics, and product strategy recommendations in a single structured project.
 
-
-
-##  Project Overview
-
-Retention and reliability are the lifeblood of fintech apps like **FamPay**.  
-- **Retention** drives long-term growth — acquiring new users costs 5–7x more than keeping existing ones.  
-- **Recharge funnel success** is critical for revenue — sudden drops signal systemic issues that erode trust.  
-
-This project deep-dives into:  
-1. **User Retention Analysis** (Habit formation, active months, transaction diversity).  
-2. **Recharge Funnel Diagnostics** (Identifying drop-offs, operator failures, UPI reliability).  
-3. **Actionable Product Insights** (Data-backed nudges, loyalty programs, transparency measures).  
-
-
-
-##  Project Structure
-
-SQL_QUERIES_TASK1.docx # SQL queries for retention metrics
----
-TASK1_PRESENTATION.pptx # Retention analysis presentation (Insights + Nudges)
----
-TASK2_PRESENTATION.pptx # Recharge funnel analysis (Root causes + Fixes)
----
-README.md # Project documentation
 ---
 
+## Project Overview
 
+Retention and transaction reliability are foundational to growth in consumer fintech.  
+- Retained users contribute to higher lifetime value and word-of-mouth acquisition.  
+- Recharge funnel performance directly impacts revenue and user trust.
 
+This project covers two major analytical tracks:
 
-##  Key Analyses
+1. User Retention Analysis (habit formation, transaction patterns, behavioural segmentation)  
+2. Recharge Funnel Diagnostics (conversion issues, operator failures, UPI success decline)
 
-### **Retention Metrics (SQL-based)**
-- Avg. transactions per month (Retained vs Non-Retained)  
-- Avg. time from activation → first transaction  
+Both analyses are driven using SQL and data interpretation, supported by structured presentations and detailed reasoning.
+
+---
+
+## Project Structure
+
+SQL_QUERIES_TASK1.docx      # SQL queries for retention metrics  
+---  
+TASK1_PRESENTATION.pptx     # Retention analysis (Insights + Nudges)  
+---  
+TASK2_PRESENTATION.pptx     # Recharge funnel RCA (Root causes + Fixes)  
+---  
+README.md                   # Project documentation  
+---
+
+---
+
+## Key Analyses
+
+### Retention Metrics (SQL-Based)
+
+The retention study evaluates seven core behavioural dimensions:
+
+- Average transactions per month  
+- Time from activation to first transaction  
 - Transaction type distribution (Merchant / P2P / Card)  
-- Avg, Min, Max transaction value  
-- Age group distribution (Teens, Young Adults, Adults)  
-- Average active months  
-- % of multi-type users (diversity of transactions)  
+- Average, minimum, and maximum transaction value  
+- Age group distribution  
+- Active months distribution  
+- Transaction-type diversity (single vs multi-type users)
 
- **Insight:** Retained FamPay users transact **2–3x more frequently**, adopt **multiple transaction types**, and show **higher average spend**.  
-
-
-### **Recharge Funnel Diagnostics**
-- **Stage drops:** Browse → Plan → Payment → Success → Confirmation  
-- **Key issues identified:**  
-  - Operator X timeout failures (3× spike, 55% share).  
-  - UPI reliability dip (−15% success).  
-  - Operator Y delays (1–2 hrs confirmation).  
-  - Growing **trust erosion**: complaints doubled, social mentions spiked.  
-
- **Insight:** FamPay’s funnel leakages were driven primarily by **infrastructure failures** (operator & UPI), amplified by **lack of user transparency**.  
-
-
-
-##  Recommendations
-
-- **Retention Playbook for FamPay:**  
-  - Onboarding rewards for **first transaction**.  
-  - Cashback nudges for **repeat usage**.  
-  - Cross-sell multiple transaction types early (UPI + Card).  
-  - Loyalty program with **progressive unlocks**.  
-
-- **Recharge Funnel Fixes for FamPay:**  
-  - Short term: In-app outage alerts, fallback payment suggestions, instant refunds.  
-  - Medium term: Operator reliability SLAs, retry logic for UPI failures.  
-  - Long term: Operator diversification, real-time monitoring, **user trust signals** (live success rates, “Recharge or Refund in 30 mins”).  
-
-
-
-##  Tech Stack
-
-- **SQL (PostgreSQL)** – for retention & funnel queries  
-- **Excel** – for visualization 
-- **Business/Product Frameworks** – root cause analysis, prioritization, user nudges  
+Insight: Retained FamApp users engage more consistently, transact across more categories, and establish behaviour patterns earlier in their lifecycle.
 
 ---
 
-##  Outcomes
+### Recharge Funnel Diagnostics
 
-- Built **7 retention metrics** entirely in SQL.  
-- Identified **3 major recharge funnel bottlenecks** with quantified impact.  
-- Proposed **short-term + long-term fixes** balancing **user trust** and **infra resilience**.  
+Recharge funnel performance was analysed across: Browse → Plan Selected → Payment Initiated → Payment Successful → Recharge Confirmed.
+
+Key Issues Identified:
+- Significant timeout increase from Operator X (55% share of volume)  
+- Delayed confirmations from Operator Y  
+- Drop in UPI success rate  
+- Surge in user complaints and delay reports  
+
+Insight: The revenue decline stemmed from operator-side failures and UPI reliability issues, which led to customer frustration and reduced repeat attempts.
 
 ---
 
-##  Author  
-**Sai Gautham Godala**  
- 
+## SQL Queries (Task 1)
 
----
+### Metric 1: Average Transactions per Month (Retained vs Not Retained)
+
+```sql
+WITH cte AS (
+    SELECT
+        user_id,
+        CASE WHEN COUNT(DISTINCT date_trunc('month', date_of_transaction)) >= 3
+             THEN 'Retained' ELSE 'Not Retained' END AS retention_status,
+        COUNT(*) AS txn_count
+    FROM transaction_details
+    WHERE status = 'Completed'
+    GROUP BY user_id
+)
+
+SELECT
+    retention_status,
+    ROUND(AVG(txn_count), 2) AS avg_transactions
+FROM cte
+GROUP BY retention_status;
