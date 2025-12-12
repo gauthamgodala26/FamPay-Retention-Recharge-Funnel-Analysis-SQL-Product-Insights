@@ -126,6 +126,29 @@ These metrics reveal how early engagement, transaction frequency, and behaviour 
 **Sai Gautham Godala**
 
 
+## Sample Outputs (Illustrative)
+
+### Retention Summary (Sample Output)
+
+| Retention Status | Avg Txns/Month | Active Months | % Multi-Type Users |
+|------------------|----------------|---------------|--------------------|
+| Retained         | 14.2           | 3.0           | 68%                |
+| Not Retained     | 4.7            | 1.4           | 22%                |
+
+### Recharge Funnel Performance (Sample Comparison)
+
+| Stage                 | Previous | Current | Drop % |
+|-----------------------|----------|---------|--------|
+| Browse                | 70,000   | 60,000  | -14%   |
+| Plan Selected         | 49,000   | 35,000  | -28%   |
+| Payment Initiated     | 44,000   | 28,000  | -36%   |
+| Payment Successful    | 35,200   | 18,000  | -49%   |
+| Recharge Confirmed    | 33,400   | 15,000  | -55%   |
+
+*Note: These tables use illustrative values to demonstrate the expected SQL output format.*
+
+
+
 
 
 ---
