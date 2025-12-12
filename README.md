@@ -121,11 +121,6 @@ These metrics reveal how early engagement, transaction frequency, and behaviour 
 - `README.md` — Project documentation  
 
 ---
-
-## Author  
-**Sai Gautham Godala**
-
-
 ## Sample Outputs (Illustrative)
 
 ### Retention Summary (Sample Output)
@@ -146,6 +141,11 @@ These metrics reveal how early engagement, transaction frequency, and behaviour 
 | Recharge Confirmed    | 33,400   | 15,000  | -55%   |
 
 *Note: These tables use illustrative values to demonstrate the expected SQL output format.*
+
+## Author  
+**Sai Gautham Godala**
+
+
 
 
 
