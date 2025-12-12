@@ -1,11 +1,14 @@
-/* -----------------------------------------------------------
-   METRIC 1: Avg Transactions per Month (Retained vs Not Retained)
-   Purpose:
-     - Calculate average number of completed transactions
-       per user, grouped by retention status.
-   Skills:
-     - CTEs, date_trunc, conditional aggregation
------------------------------------------------------------- */
+/* ===========================================================
+   🔥 METRIC 1: AVG TRANSACTIONS PER MONTH (RETAINED VS NOT RETAINED)
+   -----------------------------------------------------------
+   PURPOSE:
+     Calculate avg completed transactions per user grouped by
+     retention status.
+   SQL SKILLS:
+     - CTE
+     - date_trunc
+     - conditional aggregation
+=========================================================== */
 
 WITH cte AS (
     SELECT
